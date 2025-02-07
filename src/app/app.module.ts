@@ -11,6 +11,8 @@ import { PipesModule } from './pipes/pipes.module';
 import { UiModule } from './ui/ui.module';
 import { FormsModule } from '@angular/forms';
 import { MovementsComponent } from './movements/movements.component';
+import { ForeignExchangeComponent } from './foreign-exchange/foreign-exchange.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -18,7 +20,8 @@ import { MovementsComponent } from './movements/movements.component';
     AppComponent,
     AccountComponent,
     AccountsListComponent,
-    MovementsComponent
+    MovementsComponent,
+    ForeignExchangeComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import { MovementsComponent } from './movements/movements.component';
     PipesModule,
     UiModule,
     FormsModule,
-    NgxWebstorageModule.forRoot()
+    NgxWebstorageModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
