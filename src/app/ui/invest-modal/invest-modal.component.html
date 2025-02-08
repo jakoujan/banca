@@ -1,0 +1,32 @@
+<div class="modal-header">
+    <h4 class="modal-title">Invertir dinero</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="formInvest">
+      <div class="mb-3">
+        <label for="fromAccount" class="form-label">Cuenta Origen</label>
+        <select class="form-control" formControlName="cuenta">
+          <option>Seleccione una</option>
+          <option *ngFor="let account of customer?.accounts" [ngValue]="account">
+            {{ account | accountDescriptor }} {{ account.balance | currency:'MXN' }}
+          </option>
+        </select>
+      </div>
+  
+      <div class="mb-3">
+        <label for="amount" class="form-label">Importe de la inversión</label>
+        <input type="number" class="form-control" formControlName="cantidad" />
+      </div>
+      <div class="mb-3">
+        <label for="rate" class="form-label">tasa de inversión</label>
+        <input type="number" class="form-control" formControlName="tasa" />
+      </div>
+    </form>
+  </div>
+  
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-primary" (click)="invertir()" [disabled]="formInvest.invalid">Realizar operación</button>
+    <button type="button" class="btn btn-outline-secondary" (click)="activeModal.close('Close click')">Cerrar</button>
+  </div>
+  

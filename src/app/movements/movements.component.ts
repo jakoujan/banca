@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AccountManagerService } from '../services/account-manager.service';
 import { LocalStorageService } from 'ngx-webstorage';
 import { IAccount, ICustomer } from '../entities/interfaces';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -16,7 +15,7 @@ export class MovementsComponent implements OnInit {
   accounts: IAccount[] = [];
   selectedAccount?: IAccount;
 
-  constructor(private accountService: AccountManagerService, private storage: LocalStorageService, private modalService: NgbModal) { }
+  constructor(private storage: LocalStorageService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.accounts = this.customer.accounts;

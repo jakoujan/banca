@@ -1,0 +1,37 @@
+<div class="modal-header">
+    <h4 class="modal-title">Comprar dolares</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="ActiveModal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="formDivisa">
+      <div class="mb-3">
+        <label for="fromAccount" class="form-label">Cuenta de Origen</label>
+        <select class="form-control" formControlName="fromCuenta">
+          <option>Seleccione una cuenta</option>
+          <option *ngFor="let account of customer?.accounts" [ngValue]="account">
+            {{ account | accountDescriptor }} {{ account.balance | currency:'MXN' }}
+          </option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="toAccount" class="form-label">Cuenta en USD</label>
+        <select class="form-control" formControlName="USDCuenta">
+          <option>Seleccione una cuenta</option>
+          <option *ngFor="let account of customer?.accounts" [ngValue]="account">
+            {{ account | accountDescriptor }}
+          </option>
+        </select>
+      </div>
+  
+      <div class="mb-3">
+        <label for="amount" class="form-label">Dinero a comprar en USD</label>
+        <input type="number" class="form-control" formControlName="amount" />
+      </div>
+    </form>
+  </div>
+  
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-primary" (click)="comprarDivisa()" [disabled]="formDivisa.invalid">Realizar compra</button>
+    <button type="button" class="btn btn-outline-secondary" (click)="ActiveModal.close('Close click')">Cerrar</button>
+  </div>
+  

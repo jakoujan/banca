@@ -1,0 +1,5 @@
+<tr class="list-group-item" *ngFor="let investment of invest">
+    <td>{{investment.investmentId}}</td>            
+    <td>{{investment.balance | currency:'MXN'}}</td>
+    <td>{{investment.investRate}}</td>
+</tr>

@@ -1,0 +1,22 @@
+<h1>Invierte</h1>
+<p>{{ customer | customerName}}</p>
+
+<div>
+    <button class="btn btn-light mb-2 me-2" (click)="abrirInvestModal()">
+        Invertir
+    </button>
+</div>
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Cuenta</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Tasa</th>
+      </tr>
+    </thead>
+      <tbody *ngIf="!customer.investments || customer.investments.length <= 0">
+        <ng-template #investmentList>
+        </ng-template>
+      </tbody>

@@ -17,6 +17,14 @@
       "accountName": "Cuenta Nomina",
       "balance": 25000,
       "transactions": []
+    },
+    {
+      "accountId": "12031986",
+      "customerId": "1225235",
+      "accountName": "Cuenta Dolares",
+      "balance": 0,
+      "transactions": []
     }
-  ]
+  ],
+  "investments": []
 }

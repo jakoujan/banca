@@ -1,5 +1,6 @@
 export enum TranscationType {
     DEPOSIT = 'deposit',
     WITHDRAW = 'withdraw',
-    TRANSFER = 'transfer'
+    TRANSFER = 'transfer',
+    INVEST = 'invest'
 }

@@ -28,6 +28,12 @@ export interface ITransaction {
 export interface IInvest {
   investmentId: string;
   balance: number;
-  transactions: ITransaction[];
   investRate: number;
+  transactions: ITransaction[];
+}
+
+
+export interface monedas{
+  currency: string;
+  amount: any;
 }
